@@ -10,6 +10,7 @@ python = "^3.11"
 requests = "^2.33.1"
 bs4 = "^0.0.2"
 lxml = "^6.1.0"
+pandas = "^3.0.2"
 
 
 [build-system]
