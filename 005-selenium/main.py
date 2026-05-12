@@ -1,5 +1,8 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 import pandas as pd
 
 website = "https://www.adamchoi.co.uk/overs/detailed"
@@ -9,6 +12,11 @@ driver.get(website)
 
 all_matches_btn = driver.find_element(By.XPATH, '//label[@analytics-event="All matches"]')
 all_matches_btn.click()
+
+dropdown = Select(driver.find_element(By.ID, 'country'))
+dropdown.select_by_visible_text("Spain")
+
+time.sleep(5)
 
 matches = driver.find_elements(By.TAG_NAME, 'tr')
 
